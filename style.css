@@ -62,8 +62,7 @@ body {
 .my-pic {
   margin-left: 10px;
 }
-.my-desc h1,
-p {
+.my-desc>h1, .home-subtitle, .home-description {
   margin-bottom: 1.5rem;
 }
 .my-desc h1 {
@@ -160,6 +159,9 @@ a {
   align-items: center;
   width: 100%;
 }
+.work.section-sides {
+    align-items: baseline !important;
+}
 .left-side {
   flex: 1;
 }
@@ -189,12 +191,12 @@ a {
   align-items: center;
 }
 .top-header h2 {
-    margin: 0 4px;
+  margin: 0 4px;
 }
 .skills-sides * {
   margin: 0 3px;
 }
-.progress-bar { 
+.progress-bar {
   height: 9px;
   position: relative;
   background: #ffe6d8;
@@ -210,42 +212,42 @@ a {
   background-color: var(--orange-color);
 }
 .html-css::before {
-    width: 90%;
+  width: 90%;
 }
 .javascript::before {
-    width: 85%;
+  width: 85%;
 }
 .react::before {
-    width: 94%;
+  width: 94%;
 }
 .angular::before {
-    width: 70%;
+  width: 70%;
 }
 .nextjs::before {
-    width: 90%;
+  width: 90%;
 }
 .react-native::before {
-    width: 85%;
+  width: 85%;
 }
 .flutter::before {
-    width: 85%
+  width: 85%;
 }
 
 /* BACKEND */
 .node::before {
-    width: 92%;
+  width: 92%;
 }
 .firebase::before {
-    width: 80%;
+  width: 80%;
 }
 .python::before {
-    width: 80%;
+  width: 80%;
 }
 .php::before {
-    width: 85%;
+  width: 85%;
 }
 .codeigniter::before {
-    width: 92%;
+  width: 92%;
 }
 
 .skills-list {
@@ -254,9 +256,9 @@ a {
   padding: 2rem 0;
 }
 .skill-card {
-    position: relative;
-    margin: 2rem 0;
-    padding-top: 23px;
+  position: relative;
+  margin: 2rem 0;
+  padding-top: 23px;
 }
 .skill-name {
   position: absolute;
@@ -266,11 +268,75 @@ a {
 }
 .skill-percent {
   position: absolute;
-  right:1px;
+  right: 1px;
   top: -3px;
 }
 .top-header img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* Qualification */
+.work-card h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.date-icon {
+  height: 18px;
+  width: 18px;
+}
+.date-p {
+  display: flex;
+  align-items: center;
+}
+.date-p img {
+    margin-right: 0.4rem;
+}
+.work-card *:not(h4) {
+    margin-top: 0.5rem;
+}
+
+.work-card {
+    padding-left: 2rem;
+    padding-bottom: 1.3rem;
+}
+.right-side .work-card {
+    border-left: 2px solid #ecc6b1;
+}
+.work.left-side {
+    flex: 1;
+    margin: 2rem;
+}
+.work.right-side {
+    flex: 1;
+    position: relative;
+}
+.right-side .work-card h4::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #ffa97a;
+    border-radius: 50%;
+    position: absolute;
+    /* top: 0; */
+    left: -0.6rem;
+}
+.orange-color {
+    color: var(--orange-color);
+}
+.work-title {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+}
+.work-title * {
+    margin: 0 0.3rem;
+}
+.work-header {
+    display: flex;
+    justify-content: space-between;
+}
+.work-header .work-title {
+    margin: 2rem 4rem 0 4rem;
+}
