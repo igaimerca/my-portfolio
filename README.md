@@ -5,7 +5,7 @@
      ATLP Capstone Project
   </p>
     <p align="center">
-[Live Demo N.B: Still in development mode](https://igaimerca.github.io/my-portfolio)
+[Live Demo](https://igaimerca.github.io/my-portfolio) N.B: Still in development mode
   </p>
   
 </div>
