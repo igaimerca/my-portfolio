@@ -29,9 +29,15 @@ body {
   color: var(--black-color);
 }
 .main-wrapper {
-  width: calc(100vw - 30%);
-  margin: 3rem auto;
+  width: calc(100vw - 45%);
+  margin: 0 auto;
+  position: relative;
+}
+.landing-page {
+  position: relative;
   display: flex;
+  padding: 6.5em 0;
+  padding-bottom: 10em;
   justify-content: space-between;
   align-items: center;
 }
@@ -40,14 +46,32 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  position: absolute;
+  left: -6rem;
 }
 .social-icons img {
   margin-bottom: 2rem;
   cursor: pointer;
+  height: 20px;
+  width: 20px;
+}
+.my-desc {
+  margin-right: 15px;
+}
+.my-pic {
+  margin-left: 10px;
 }
 .my-desc h1,
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+.my-desc h1 {
+  font-size: 48px;
+}
+.home-subtitle {
+  color: var(--gray-color);
+  font-size: 20px;
+  font-weight: 700;
 }
 a {
   color: var(--black-color);
@@ -57,7 +81,7 @@ a {
   display: inline-block;
   background-color: var(--orange-color);
   color: #fff;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   border-radius: 0.5rem;
   font-weight: 500;
   outline: none;
@@ -68,14 +92,17 @@ a {
   cursor: pointer;
 }
 .button span {
-    margin-right: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 7px;
 }
 .button:hover {
-    background-color: var(--hover-color);
+  background-color: var(--hover-color);
 }
+/* 
 .header {
-  box-shadow: 0 -1px 4px rgb(0 0 0 / 15%);
-}
+    box-shadow: 0 -1px 4px rgb(0 0 0 / 15%); 
+}*/
 .nav-container {
   padding: 1rem 0;
   font-size: 14px;
@@ -94,4 +121,126 @@ a {
 }
 .nav-item {
   margin: 0 1rem;
+}
+.home-scroll-btn {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-weight: bold;
+  position: absolute;
+  bottom: 3px;
+  transition: all 0.3s ease-in-out;
+}
+.home-scroll-name {
+  margin: 0 0.2rem;
+}
+.home-scroll-btn:hover {
+  transform: translateY(0.25rem);
+}
+.about-me-section {
+  margin: 12em 0;
+}
+
+/* GLOBAL STYLES */
+.section-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 0;
+  flex-direction: column;
+}
+.section-title {
+  text-align: center;
+}
+.section-sides {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.left-side {
+  flex: 1;
+}
+.right-side {
+  flex: 1;
+}
+.statistics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.statistics .stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.stats small {
+  text-align: center;
+  color: #7c706a;
+  font-weight: weight;
+}
+.section-sides .top-header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.top-header h2 {
+    margin: 0 4px;
+}
+.skills-sides * {
+  margin: 0 3px;
+}
+.progress-bar { 
+  height: 9px;
+  position: relative;
+  background: #ffe6d8;
+  border-radius: 4px;
+}
+.progress-bar::before {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 4px;
+  background-color: var(--orange-color);
+}
+.html-css::before {
+    width: 90%;
+}
+.javascript::before {
+    width: 85%;
+}
+.react::before {
+    width: 94%;
+}
+.angular::before {
+    width: 70%;
+}
+.nextjs::before {
+    width: 90%;
+}
+.skills-list {
+  width: 85%;
+  margin: 0 0 3rem 0.3rem;
+  padding: 2rem 0;
+}
+.skill-card {
+    position: relative;
+    margin: 2rem 0;
+    padding-top: 23px;
+}
+.skill-name {
+  position: absolute;
+  left: 1px;
+  top: -3px;
+  font-weight: 500;
+}
+.skill-percent {
+  position: absolute;
+  right:1px;
+  top: -3px;
 }
