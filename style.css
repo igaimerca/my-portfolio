@@ -10,6 +10,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins";
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -223,6 +224,30 @@ a {
 .nextjs::before {
     width: 90%;
 }
+.react-native::before {
+    width: 85%;
+}
+.flutter::before {
+    width: 85%
+}
+
+/* BACKEND */
+.node::before {
+    width: 92%;
+}
+.firebase::before {
+    width: 80%;
+}
+.python::before {
+    width: 80%;
+}
+.php::before {
+    width: 85%;
+}
+.codeigniter::before {
+    width: 92%;
+}
+
 .skills-list {
   width: 85%;
   margin: 0 0 3rem 0.3rem;
@@ -244,3 +269,8 @@ a {
   right:1px;
   top: -3px;
 }
+.top-header img {
+    cursor: pointer;
+}
+
+/* Qualification */
