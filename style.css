@@ -374,8 +374,24 @@ a {
 }
 
 /* RESPONSIVNESS */
-@media screen and (max-width: 1164px) {
-  .my-pic img {
-    display: none;
-  }
+
+@media screen and (max-width: 854px) {
+    .section-sides {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:360px) {
+ .header {
+     display: none;
+ }
+ .landing-page {
+        flex-direction: column;
+ }
+ .main-wrapper {
+     width: 100%;
+ }
+ .social-icons {
+     display: none;
+ }
+    
 }
