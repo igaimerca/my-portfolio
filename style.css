@@ -385,12 +385,32 @@ a {
      display: none;
  }
  .landing-page {
-        flex-direction: column;
+        flex-direction: column-reverse;
+        padding-top: 3rem !important;
+ }
+ .my-pic img {
+     width: 95%;
+     float: right;
  }
  .main-wrapper {
+     padding: 0 2rem;
      width: 100%;
  }
  .social-icons {
+    left: -1rem;
+    top: 13%;
+
+ }
+ .my-desc h1 {
+     font-size: 2.3em;
+ }
+ .projects-sides {
+     width: 50% !important;
+ }
+.project-img {
+     width: 100%;
+ }
+ .work-title.education, .work.school {
      display: none;
  }
     
