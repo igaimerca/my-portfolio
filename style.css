@@ -30,6 +30,7 @@ body {
   background-color: var(--main-bg-color);
   color: var(--black-color);
   overflow-x: hidden;
+  position: relative;
 }
 .main-wrapper {
   width: calc(100vw - 37%);
@@ -474,7 +475,14 @@ a {
     align-items: start;
 }
 
-
+/* BOTTOM NAVBAR */
+.bottom-nav {
+    position: absolute;
+    height: 40px;
+    /* background: red; */
+    bottom: 0;
+    width: 100vw;
+}
 
 /* Footer */
 .footer {
