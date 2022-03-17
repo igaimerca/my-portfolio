@@ -562,6 +562,9 @@ textarea {
     width: 100%;
     border-radius: 0;
   }
+  .project__data {
+      flex-direction: column;
+  }
 }
 @media (max-width: 634px) {
   .header {
