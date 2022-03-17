@@ -169,7 +169,8 @@ a {
   width: 100%;
 }
 .work.section-sides {
-  align-items: baseline !important;
+  align-items: baseline ;
+  width: 74%;
 }
 .left-side {
   flex: 1;
@@ -364,6 +365,7 @@ a {
 .projects-sides {
   margin: 2rem 0;
   border-radius: 4px;
+  width: 72%;
   position: relative;
   border-bottom: 1px dashed #b7b7b7;
 }
@@ -372,11 +374,13 @@ a {
   width: 50px;
   height: 50px;
 }
-.back-arrow {
+.back-arrow  {
   left: -6rem;
+  top: 50%;
 }
 .next-arrow {
   right: -6rem;
+  top: 50%;
 }
 
 
@@ -477,9 +481,11 @@ a {
 
 /* BOTTOM NAVBAR */
 .bottom-nav {
-    position: absolute;
-    height: 40px;
-    /* background: red; */
+    position: fixed;
+    height: 50px;
+    background: #fff;
+    box-shadow: 1px 1px 1px rgb(204, 204, 207);
+    display: none;
     bottom: 0;
     width: 100vw;
 }
@@ -528,11 +534,49 @@ a {
 
 /* RESPONSIVENESS */
 
+@media only screen and (max-width: 1115px) {
+    .social-icons {
+        display: none;
+    }
+    .main-wrapper {
+        padding: 0 2rem;
+        width: calc(100vw - 5%);
+    }
+}
 @media screen and (max-width: 854px) {
+    .landing-page {
+        flex-direction: column-reverse;
+        align-items: start;
+    }
     .section-sides {
+        flex-direction: column;
+        align-items: center;
+    }
+    .work.section-sides {
+        align-items: center;
+      }
+}
+
+@media (max-width: 664px) {
+    .project__container {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 0;
+    }
+}
+@media (max-width: 634px) {
+    .header {
+       display: none;
+    }
+    .bottom-nav {
+        display: inline-block;
+    }
+    .footer__container {
         flex-direction: column;
     }
 }
+
+
 @media screen and (max-width:360px) {
  .header {
      display: none;
@@ -547,12 +591,7 @@ a {
  }
  .main-wrapper {
      padding: 0 2rem;
-     width: 100%;
- }
- .social-icons {
-    left: -1rem;
-    top: 13%;
-
+     width: calc(100vw - 5%);
  }
  .my-desc h1 {
      font-size: 2.3em;
@@ -562,9 +601,6 @@ a {
  }
 .project-img {
      width: 100%;
- }
- .work-title.education, .work.school {
-     display: none;
  }
     
 }
