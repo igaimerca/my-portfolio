@@ -2,6 +2,7 @@
   --orange-color: #ffa97a;
   --hover-color: #cb7343;
   --main-bg-color: #fefcfb;
+  --input-bg-color: #ffdecc;
   --black-color: #292523;
   --gray-color: #7c706a;
 }
@@ -373,7 +374,102 @@ a {
   right: -6rem;
 }
 
-/* RESPONSIVNESS */
+
+
+/* CONTACT ME */
+.pre-contact-wrapper {
+    display: inline-block;
+    width: 90%;
+}
+.project__container {
+    background-color: var(--orange-color);
+    border-radius: 1rem;
+    padding: 2rem 2.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-weight: 500;
+}
+.project__img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+.project__data {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.project__data * {
+    margin: 0.3rem 0;
+}
+
+.contact-btn {
+    background-color: #fff;
+    color: var(--orange-color);
+}
+.contact-btn:hover {
+    background-color: #fff;
+}
+.input__container {
+    background-color: var(--input-bg-color);
+    padding: .9rem;
+    margin: 1rem 0;
+    height: 80px;
+    border-radius: 0.7rem; 
+    display: flex;
+    flex-direction: column;
+}
+.contact-flex {
+    display: flex;
+}
+.contact-flex .input__container:first-of-type {
+    margin-right: .9rem;
+}
+.contact-flex .input__container {
+    width: 49%;
+}
+.contact__label {
+    font-size: 0.8rem;
+}
+.contact__input, textarea {
+    border: none;
+    outline: none;
+    height: 60%;
+    font-size: 1rem;
+    color: var(--gray-color);
+    background-color: transparent;
+}
+.contact__label {
+    font-weight: bold;
+}
+.input__container.textarea {
+    height: 100%;
+}
+.contact-right-side {
+    width: 65%;
+}
+.contact__information {
+    display: flex;
+    justify-content: start;
+    width: 70%;
+    margin: 1.3rem 0;
+    align-items: center;
+}
+.contact__subtitle {
+    color: var(--gray-color);
+}
+.contact__information img {
+    width: 30px;
+    height: 30px;
+    margin-right: 1.2rem;
+}
+.contactme-sides {
+    align-items: start;
+}
+/* RESPONSIVENESS */
 
 @media screen and (max-width: 854px) {
     .section-sides {
@@ -415,3 +511,5 @@ a {
  }
     
 }
+
+
