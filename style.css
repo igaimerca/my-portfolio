@@ -571,7 +571,6 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-}
   }
   .footer__container {
     flex-direction: column;
