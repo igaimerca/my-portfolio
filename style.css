@@ -486,7 +486,6 @@ textarea {
   position: fixed;
   height: 50px;
   background: #fff;
-  box-shadow: 1px 1px 1px rgb(204, 204, 207);
   display: none;
   bottom: 0;
   width: 100vw;
@@ -569,10 +568,19 @@ textarea {
     display: none;
   }
   .bottom-nav {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
   }
   .footer__container {
     flex-direction: column;
+  }
+  .contact-flex {
+      flex-direction: column;
+  }
+  .contact-flex .input__container {
+      width: 100%;
   }
 }
 
