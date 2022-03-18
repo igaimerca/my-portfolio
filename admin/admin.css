@@ -219,7 +219,14 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+@media screen and (max-width: 448px) {
+    .admin-main {
+        flex: 4;
+    }
+    .admin-sidebar {
+        flex: 2;
+    }
+}
 .admin-main {
     flex: 5;
     height: 100%;
