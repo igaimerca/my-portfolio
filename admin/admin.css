@@ -235,7 +235,7 @@ body {
   }
 }
 .admin-main {
-  flex: 5;
+  flex: 7;
   height: 100%;
 }
 .admin-ul {
@@ -274,18 +274,44 @@ i {
   margin-top: 2rem;
 }
 .card {
-  margin: 1rem;
-  width: 300px;
+  margin: .8rem;
+  width: 355px;
   background-color: #fff;
   box-shadow: 0 0 7px #bbbbbb99;
   border-radius: 0.5rem;
   transition: .3s all ease;
+  cursor: pointer;
 }
 .card:hover {
-        transform: translateY(-2px);
+        transform: translateY(-2px) scale(1.04);
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
+.new-blog-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    cursor: pointer;
+}
+.new-blog-btn i {
+    color: #fff !important;
+}
+.new-blog-btn .stat-card-icon.stat-card-icon--primary .stat-card-icon-circle {
+    background-color: #f28d56 !important;
+}
 
+.new-blog-form {
+    width: 85vw;
+    height: 76vh;
+    margin: auto;
+    background-color: #ccc;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-radius: 5px;
+    bottom: 0;
+}
 .card-header {
   width: 100%;
 }
