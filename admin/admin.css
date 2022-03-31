@@ -298,12 +298,20 @@ i {
 .new-blog-btn .stat-card-icon.stat-card-icon--primary .stat-card-icon-circle {
     background-color: #f28d56 !important;
 }
-
+.visible {
+    display: flex !important;
+}
+.create-blog-btn {
+    margin: 1rem 0;
+}
 .new-blog-form {
-    width: 85vw;
-    height: 76vh;
+    display: none;
+    width: 61vw;
+    max-height: 94vh;
+    overflow-y: scroll;
+    box-shadow: 0 0 10px -1px #ccc;
     margin: auto;
-    background-color: #ccc;
+    background-color: #fff;
     position: fixed;
     z-index: 999;
     top: 0;
@@ -315,7 +323,74 @@ i {
 .card-header {
   width: 100%;
 }
+.input__container {
+    background-color: var(--input-bg-color);
+    padding: 0.9rem;
+    margin: 1rem 0;
+    height: 80px;
+    border-radius: 0.7rem;
+    display: flex;
+    flex-direction: column;
+  }
+  #create-blog-container {
+      width: 89%;
+  }
+  .contact-flex {
+    display: flex;
+  }
+  .contact-flex .input__container:first-of-type {
+    margin-right: 0.9rem;
+  }
+  .contact-flex .input__container {
+    width: 49%;
+  }
+  .contact__label {
+    font-size: 0.8rem;
+  }
+  .contact__input,
+  textarea {
+    border: none;
+    outline: none;
+    height: 60%;
+    font-size: 1rem;
+    color: var(--gray-color);
+    background-color: transparent;
+  }
+  .contact__label {
+    font-weight: bold;
+  }
+  .input__container.textarea {
+    height: 100%;
+  }
+  .contact-right-side {
+    width: 65%;
+  }
+  .contact__information {
+    display: flex;
+    justify-content: start;
+    width: 70%;
+    margin: 1.3rem 0;
+    align-items: center;
+  }
+  .contact__subtitle {
+    color: var(--gray-color);
+  }
+  .contact__information img {
+    width: 30px;
+    height: 30px;
+    margin-right: 1.2rem;
+  }
+  .contactme-sides {
+    align-items: start;
+  }
 
+.contact-btn {
+    background-color: #fff;
+    color: var(--orange-color);
+  }
+  .contact-btn:hover {
+    background-color: #fff;
+  }
 .card-header img {
   width: 100%;
   border-top-left-radius: 0.5rem;
