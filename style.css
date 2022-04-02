@@ -169,6 +169,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* flex-direction: column; */
   width: 100%;
 }
 .error {
@@ -177,7 +178,7 @@ a {
     text-align: center;
     font-weight: bold;
   }
-  .error.contact {
+  .error.contact, .error.dashboard {
       text-align: start;
       margin-bottom: 1.2rem;
   }

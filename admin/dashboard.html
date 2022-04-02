@@ -24,29 +24,43 @@
         <div class="new-blog-form-wrapper">
             <div class="new-blog-form">
                 <h2 class="blog-form-title">Creating a blog </h2>
-                <span class="error"></span>
                 <span class="close-btn" onClick="hideCreateBlogForm()">X</span>
                 <div class="section-wrapper" id="contactme">
                     <div class="section-sides" id="create-blog-container">
                         <div class="right-side contact-right-side">
-                            <div class="contact-flex">
+                            <div class="">
                                 <div class="input__container">
                                     <label for="" class="contact__label">Title</label>
                                     <input type="text" name="name" class="contact__input title">
                                 </div>
+                            </div>
+                            <div class="contact-flex">
+                                <div class="input__container file-input-container">
+                                    <div class="file-input">
+                                        <input type="file" name="file-input" id="file-input"
+                                            class="file-input__input" />
+                                        <label class="file-input__label" for="file-input">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                data-icon="upload" class="svg-inline--fa fa-upload fa-w-16" role="img"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <path fill="currentColor"
+                                                    d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z">
+                                                </path>
+                                            </svg>
+                                            <span>Upload file</span></label>
+                                    </div>
+                                </div>
+
                                 <div class="input__container">
                                     <label for="" class="contact__label">Tags (Separate them with commas)</label>
                                     <input type="email" name="name" class="contact__input">
                                 </div>
                             </div>
-                            <div class="input__container">
-                                <label for="" class="contact__label">Banner photo url</label>
-                                <input type="text" name="name" class="contact__input">
-                            </div>
                             <div class="input__container textarea">
                                 <label for="" class="contact__label">Description</label>
-                                <textarea name="" id="" cols="20" rows="9" class="decription"></textarea>
+                                <textarea name="" id="" cols="20" rows="6" class="description"></textarea>
                             </div>
+                            <span class="error dashboard"></span>
                             <button class="button create-blog-btn" onclick="validateForm()">
                                 <span>
                                     Create blog
@@ -178,7 +192,8 @@
                         <span class="action-icon" onclick="showEditBlogForm()"> <i class="uil-edit-alt"></i> </span>
                         <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
                         <h3>Andela Brand's Evolution</h3>
-                        <p onclick="openSingleBlog()">Our new brand symbolizes the spark created when people come together through
+                        <p onclick="openSingleBlog()">Our new brand symbolizes the spark created when people come
+                            together through
                             @Andela
                             to make an impact and the limitless opening of the world, keeping us moving toward a
                             brighter, more brilliant future. #ThisisAndela </p>
@@ -201,7 +216,8 @@
                         <span class="action-icon" onclick="showEditBlogForm()"> <i class="uil-edit-alt"></i> </span>
                         <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
                         <h3>Andela Brand's Evolution</h3>
-                        <p onclick="openSingleBlog()">Our new brand symbolizes the spark created when people come together through
+                        <p onclick="openSingleBlog()">Our new brand symbolizes the spark created when people come
+                            together through
                             @Andela
                             to make an impact and the limitless opening of the world, keeping us moving toward a
                             brighter, more brilliant future. #ThisisAndela </p>
@@ -224,7 +240,8 @@
                         <span class="action-icon" onclick="showEditBlogForm()"> <i class="uil-edit-alt"></i> </span>
                         <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
                         <h3>Andela Brand's Evolution</h3>
-                        <p onclick="openSingleBlog()">Our new brand symbolizes the spark created when people come together through
+                        <p onclick="openSingleBlog()">Our new brand symbolizes the spark created when people come
+                            together through
                             @Andela
                             to make an impact and the limitless opening of the world, keeping us moving toward a
                             brighter, more brilliant future. #ThisisAndela </p>
@@ -247,7 +264,8 @@
                         <span class="action-icon" onclick="showEditBlogForm()"> <i class="uil-edit-alt"></i> </span>
                         <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
                         <h3>Andela Brand's Evolution</h3>
-                        <p onclick="openSingleBlog()">Our new brand symbolizes the spark created when people come together through
+                        <p onclick="openSingleBlog()">Our new brand symbolizes the spark created when people come
+                            together through
                             @Andela
                             to make an impact and the limitless opening of the world, keeping us moving
                             toward a brighter, more brilliant future. #ThisisAndela </p>
@@ -270,7 +288,8 @@
                         <span class="action-icon" onclick="showEditBlogForm()"> <i class="uil-edit-alt"></i> </span>
                         <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
                         <h3>Andela Brand's Evolution</h3>
-                        <p onclick="openSingleBlog()">Our new brand symbolizes the spark created when people come together through
+                        <p onclick="openSingleBlog()">Our new brand symbolizes the spark created when people come
+                            together through
                             @Andela
                             to make an impact and the limitless opening of the world, keeping us moving
                             toward a brighter, more brilliant future. #ThisisAndela </p>
@@ -293,7 +312,8 @@
                         <span class="action-icon" onclick="showEditBlogForm()"> <i class="uil-edit-alt"></i> </span>
                         <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
                         <h3>Andela Brand's Evolution</h3>
-                        <p onclick="openSingleBlog()">Our new brand symbolizes the spark created when people come together
+                        <p onclick="openSingleBlog()">Our new brand symbolizes the spark created when people come
+                            together
                             through
                             @Andela
                             to make an impact and the limitless opening of the world, keeping us
@@ -343,17 +363,25 @@
 
         function validateForm() {
             let title = document.querySelector(".title").value;
-            let description = document.querySelector(".discription").innerHTML;
+            let description = document.querySelector(".description").value;
             let errorEl = document.querySelector(".error");
 
             if (!title.trim().length) {
                 errorEl.innerHTML = "Title cannot be empty"
             } else if (!description.trim().length) {
                 errorEl.innerHTML = "Description cannot be empty"
-            } else {
+            } else if (description.trim().length < 50) {
+                errorEl.innerHTML = "Description must be at least 50 characters long";
+            } else if (description.trim().length > 1000) {
+                errorEl.innerHTML = "Description must be at most 1000 characters long"
+            } else if (title.trim().length > 150) {
+                errorEl.innerHTML = "Title must be at most 150 characters long"
+            }
+            else {
                 window.location = "/admin/dashboard.html";
             }
         }
+
         function logout() {
             localStorage.clear();
             window.location = "/index.html";
