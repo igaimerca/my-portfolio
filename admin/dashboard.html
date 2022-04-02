@@ -79,28 +79,42 @@
                 <div class="section-wrapper" id="contactme">
                     <div class="section-sides" id="create-blog-container">
                         <div class="right-side contact-right-side">
-                            <div class="contact-flex">
+                            <div class="">
                                 <div class="input__container">
                                     <label for="" class="contact__label">Title</label>
-                                    <input type="text" name="name" class="contact__input"
+                                    <input type="text" name="name" class="contact__input edit-title"
                                         value="Andela Brand's Evolution">
                                 </div>
+                            </div>
+                            <div class="contact-flex">
+                                <div class="input__container file-input-container">
+                                    <div class="file-input">
+                                        <input type="file" name="file-input" id="file-input"
+                                            class="file-input__input" />
+                                        <label class="file-input__label" for="file-input">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                data-icon="upload" class="svg-inline--fa fa-upload fa-w-16" role="img"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <path fill="currentColor"
+                                                    d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z">
+                                                </path>
+                                            </svg>
+                                            <span>Upload file</span></label>
+                                    </div>
+                                </div>
+
                                 <div class="input__container">
                                     <label for="" class="contact__label">Tags (Separate them with commas)</label>
-                                    <input type="email" name="name" class="contact__input" value="tech,talent pool">
+                                    <input type="email" name="name" value="tech,talent pool" class="contact__input">
                                 </div>
-                            </div>
-                            <div class="input__container">
-                                <label for="" class="contact__label">Banner photo url</label>
-                                <input type="text" name="name" class="contact__input"
-                                    value="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png">
                             </div>
                             <div class="input__container textarea">
                                 <label for="" class="contact__label">Description</label>
-                                <textarea name="" id="" cols="20"
-                                    rows="9">Our new brand symbolizes the spark created when people come together through @Andela to make an impact and the limitless opening of the world, keeping us moving toward a brighter, more brilliant future. #ThisisAndela </textarea>
+                                <textarea name="" id="" cols="20" rows="6"
+                                    class="edit-description">Our new brand symbolizes the spark created when people come together through @Andela to make an impact and the limitless opening of the world, keeping us moving toward a brighter, more brilliant future. #ThisisAndela </textarea>
                             </div>
-                            <button class="button create-blog-btn">
+                            <span class="edit-error error dashboard"></span>
+                            <button class="button create-blog-btn" onclick="validateEditForm()">
                                 <span>
                                     Save Changes
                                 </span>
@@ -378,7 +392,31 @@
                 errorEl.innerHTML = "Title must be at most 150 characters long"
             }
             else {
-                window.location = "/admin/dashboard.html";
+                if (confirm("Article successfully published! Do you want to view it?")) {
+                    window.location = "/single_blog.html";
+                }
+            }
+        }
+        function validateEditForm() {
+            let title = document.querySelector(".edit-title").value;
+            let description = document.querySelector(".edit-description").value;
+            let errorEl = document.querySelector(".edit-error");
+
+            if (!title.trim().length) {
+                errorEl.innerHTML = "Title cannot be empty"
+            } else if (!description.trim().length) {
+                errorEl.innerHTML = "Description cannot be empty"
+            } else if (description.trim().length < 50) {
+                errorEl.innerHTML = "Description must be at least 50 characters long";
+            } else if (description.trim().length > 1000) {
+                errorEl.innerHTML = "Description must be at most 1000 characters long"
+            } else if (title.trim().length > 150) {
+                errorEl.innerHTML = "Title must be at most 150 characters long"
+            }
+            else {
+                if (confirm("Changes Saved! Do you want to view it?")) {
+                    window.location = "/single_blog.html";
+                }
             }
         }
 

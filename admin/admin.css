@@ -353,9 +353,9 @@ i {
 .create-blog-btn {
   margin: 1rem 0;
 }
-.new-blog-form-wrapper {
+/* .new-blog-form-wrapper {
   display: flex !important;
-}
+} */
 .edit-blog-form-wrapper,
 .new-blog-form-wrapper {
   background-color: #f7f7f7;
