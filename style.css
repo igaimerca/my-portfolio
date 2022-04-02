@@ -171,6 +171,16 @@ a {
   align-items: center;
   width: 100%;
 }
+.error {
+    margin-top: 1rem;
+    color: crimson;
+    text-align: center;
+    font-weight: bold;
+  }
+  .error.contact {
+      text-align: start;
+      margin-bottom: 1.2rem;
+  }
 .work.section-sides {
   align-items: baseline;
   width: 74%;
@@ -665,6 +675,7 @@ textarea {
     width: 100%;
   }
 }
+
 @media screen and (max-width: 393px) {
     .my-desc h1 {
         font-size: 2em;
