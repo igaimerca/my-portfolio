@@ -158,10 +158,6 @@ body {
   text-decoration: underline;
 }
 
-.form .button {
-  margin-top: 35px;
-}
-
 .form .button input {
   border: none;
   color: rgb(255, 255, 255);
@@ -202,11 +198,11 @@ body {
   background: transparent !important;
 }
 .statistics {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 1.4rem;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
 }
 .action-icon.two {
   right: 0;
@@ -274,123 +270,156 @@ i {
   margin-top: 2rem;
 }
 .card {
-  margin: .8rem;
+  margin: 0.8rem;
   width: 355px;
   background-color: #fff;
   box-shadow: 0 0 7px #bbbbbb99;
   border-radius: 0.5rem;
-  transition: .3s all ease;
+  transition: 0.3s all ease;
   cursor: pointer;
 }
 .card:hover {
-        transform: translateY(-2px) scale(1.04);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 .new-blog-btn {
-    position: fixed;
-    bottom: 2rem;
-    right: 1rem;
-    cursor: pointer;
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  cursor: pointer;
+}
+.error {
+    margin-top: 1rem;
+    color: crimson;
+    text-align: center;
+    font-weight: bold;
+}
+.blog-form-title {
+  padding-left: 5rem;
+  padding-top: 2rem;
+  margin-bottom: -4rem;
 }
 .new-blog-btn i {
-    color: #fff !important;
+  color: #fff !important;
 }
 .new-blog-btn .stat-card-icon.stat-card-icon--primary .stat-card-icon-circle {
-    background-color: #f28d56 !important;
+  background-color: #f28d56 !important;
 }
 .visible {
-    display: flex !important;
+  display: flex !important;
 }
 .create-blog-btn {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
+.edit-blog-form-wrapper,
+.new-blog-form-wrapper {
+  background-color: #f7f7f7;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  overflow-y: scroll;
+  box-shadow: 0 0 10px -1px #ccc;
+  margin: auto;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-radius: 5px;
+  bottom: 0;
+}
+.edit-blog-form,
 .new-blog-form {
-    display: none;
-    width: 61vw;
-    max-height: 94vh;
-    overflow-y: scroll;
-    box-shadow: 0 0 10px -1px #ccc;
-    margin: auto;
-    background-color: #fff;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    right: 0;
-    left: 0;
-    border-radius: 5px;
-    bottom: 0;
+  width: 61vw;
+  background-color: #fff;
+  margin: auto;
+  position: relative;
+}
+.close-btn {
+  width: 35px;
+  height: 35px;
+  background-color: rgb(34, 33, 33);
+  border-radius: 50%;
+  padding: 0.4rem;
+  position: absolute;
+  right: 1rem;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  top: 1%;
+  cursor: pointer;
 }
 .card-header {
   width: 100%;
 }
 .input__container {
-    background-color: var(--input-bg-color);
-    padding: 0.9rem;
-    margin: 1rem 0;
-    height: 80px;
-    border-radius: 0.7rem;
-    display: flex;
-    flex-direction: column;
-  }
-  #create-blog-container {
-      width: 89%;
-  }
-  .contact-flex {
-    display: flex;
-  }
-  .contact-flex .input__container:first-of-type {
-    margin-right: 0.9rem;
-  }
-  .contact-flex .input__container {
-    width: 49%;
-  }
-  .contact__label {
-    font-size: 0.8rem;
-  }
-  .contact__input,
-  textarea {
-    border: none;
-    outline: none;
-    height: 60%;
-    font-size: 1rem;
-    color: var(--gray-color);
-    background-color: transparent;
-  }
-  .contact__label {
-    font-weight: bold;
-  }
-  .input__container.textarea {
-    height: 100%;
-  }
-  .contact-right-side {
-    width: 65%;
-  }
-  .contact__information {
-    display: flex;
-    justify-content: start;
-    width: 70%;
-    margin: 1.3rem 0;
-    align-items: center;
-  }
-  .contact__subtitle {
-    color: var(--gray-color);
-  }
-  .contact__information img {
-    width: 30px;
-    height: 30px;
-    margin-right: 1.2rem;
-  }
-  .contactme-sides {
-    align-items: start;
-  }
+  background-color: var(--input-bg-color);
+  padding: 0.9rem;
+  margin: 1rem 0;
+  height: 80px;
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: column;
+}
+#create-blog-container {
+  width: 80%;
+}
+.contact-flex {
+  display: flex;
+}
+.contact-flex .input__container:first-of-type {
+  margin-right: 0.9rem;
+}
+.contact-flex .input__container {
+  width: 49%;
+}
+.contact__label {
+  font-size: 0.8rem;
+}
+.contact__input,
+textarea {
+  border: none;
+  outline: none;
+  height: 60%;
+  font-size: 1rem;
+  color: var(--gray-color);
+  background-color: transparent;
+}
+.contact__label {
+  font-weight: bold;
+}
+.input__container.textarea {
+  height: 100%;
+}
+.contact-right-side {
+  width: 65%;
+}
+.contact__information {
+  display: flex;
+  justify-content: start;
+  width: 70%;
+  margin: 1.3rem 0;
+  align-items: center;
+}
+.contact__subtitle {
+  color: var(--gray-color);
+}
+.contact__information img {
+  width: 30px;
+  height: 30px;
+  margin-right: 1.2rem;
+}
+.contactme-sides {
+  align-items: start;
+}
 
 .contact-btn {
-    background-color: #fff;
-    color: var(--orange-color);
-  }
-  .contact-btn:hover {
-    background-color: #fff;
-  }
+  background-color: #fff;
+  color: var(--orange-color);
+}
+.contact-btn:hover {
+  background-color: #fff;
+}
 .card-header img {
   width: 100%;
   border-top-left-radius: 0.5rem;

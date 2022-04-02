@@ -10,38 +10,89 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script>
+        let userRole = JSON.parse(localStorage.getItem("user_info"))?.role;
+        console.log(userRole);
+        if (!userRole || userRole != "admin") {
+            window.location = "/";
+        }
+    </script>
 </head>
 
 <body>
     <div class="dashboard-wrapper">
-        <div class="new-blog-form">
-            <div class="section-wrapper" id="contactme">
-                <div class="section-sides" id="create-blog-container">
-                    <div class="right-side contact-right-side">
-                        <div class="contact-flex">
+        <div class="new-blog-form-wrapper">
+            <div class="new-blog-form">
+                <h2 class="blog-form-title">Creating a blog </h2>
+                <span class="error"></span>
+                <span class="close-btn" onClick="hideCreateBlogForm()">X</span>
+                <div class="section-wrapper" id="contactme">
+                    <div class="section-sides" id="create-blog-container">
+                        <div class="right-side contact-right-side">
+                            <div class="contact-flex">
+                                <div class="input__container">
+                                    <label for="" class="contact__label">Title</label>
+                                    <input type="text" name="name" class="contact__input title">
+                                </div>
+                                <div class="input__container">
+                                    <label for="" class="contact__label">Tags (Separate them with commas)</label>
+                                    <input type="email" name="name" class="contact__input">
+                                </div>
+                            </div>
                             <div class="input__container">
-                                <label for="" class="contact__label">Title</label>
+                                <label for="" class="contact__label">Banner photo url</label>
                                 <input type="text" name="name" class="contact__input">
                             </div>
-                            <div class="input__container">
-                                <label for="" class="contact__label">Tags (Separate them with commas)</label>
-                                <input type="email" name="name" class="contact__input">
+                            <div class="input__container textarea">
+                                <label for="" class="contact__label">Description</label>
+                                <textarea name="" id="" cols="20" rows="9" class="decription"></textarea>
                             </div>
+                            <button class="button create-blog-btn" onclick="validateForm()">
+                                <span>
+                                    Create blog
+                                </span>
+                                <img src="./assets/chevron.svg" alt="">
+                            </button>
                         </div>
-                        <div class="input__container">
-                            <label for="" class="contact__label">Banner photo</label>
-                            <input type="text" name="name" class="contact__input" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="edit-blog-form-wrapper">
+            <div class="edit-blog-form">
+                <h2 class="blog-form-title">Edit a blog </h2>
+                <span class="close-btn" onClick="hideEditBlogForm()">X</span>
+                <div class="section-wrapper" id="contactme">
+                    <div class="section-sides" id="create-blog-container">
+                        <div class="right-side contact-right-side">
+                            <div class="contact-flex">
+                                <div class="input__container">
+                                    <label for="" class="contact__label">Title</label>
+                                    <input type="text" name="name" class="contact__input"
+                                        value="Andela Brand's Evolution">
+                                </div>
+                                <div class="input__container">
+                                    <label for="" class="contact__label">Tags (Separate them with commas)</label>
+                                    <input type="email" name="name" class="contact__input" value="tech,talent pool">
+                                </div>
+                            </div>
+                            <div class="input__container">
+                                <label for="" class="contact__label">Banner photo url</label>
+                                <input type="text" name="name" class="contact__input"
+                                    value="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png">
+                            </div>
+                            <div class="input__container textarea">
+                                <label for="" class="contact__label">Description</label>
+                                <textarea name="" id="" cols="20"
+                                    rows="9">Our new brand symbolizes the spark created when people come together through @Andela to make an impact and the limitless opening of the world, keeping us moving toward a brighter, more brilliant future. #ThisisAndela </textarea>
+                            </div>
+                            <button class="button create-blog-btn">
+                                <span>
+                                    Save Changes
+                                </span>
+                                <img src="./assets/chevron.svg" alt="">
+                            </button>
                         </div>
-                        <div class="input__container textarea">
-                            <label for="" class="contact__label">Description</label>
-                            <textarea name="" id="" cols="20" rows="9"></textarea>
-                        </div>
-                        <button class="button create-blog-btn">
-                            <span>
-                                Create blog
-                            </span>
-                            <img src="./assets/chevron.svg" alt="">
-                        </button>
                     </div>
                 </div>
             </div>
@@ -124,164 +175,186 @@
                     </div>
                     <div class="card-content">
                         <span>Growth</span>
-                        <span class="action-icon"> <i class="uil-edit-alt"></i> </span>
+                        <span class="action-icon" onclick="showEditBlogForm()"> <i class="uil-edit-alt"></i> </span>
                         <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
                         <h3>Andela Brand's Evolution</h3>
                         <p>Our new brand symbolizes the spark created when people come together through
                             @Andela
                             to make an impact and the limitless opening of the world, keeping us moving toward a
                             brighter, more brilliant future. #ThisisAndela </p>
-                            </div>
-                        <div class="card-footer">
-                            <img src="https://lh3.googleusercontent.com/a-/AOh14GjtR01FIFEXU5kGpo2k7DgcWEN8EW64HbEBguRKDw=s288-p-rw-no"
-                                alt="">
-                            <div class="author">
-                                <p>Aimé Igirimpuhwe</p>
-                                <small>2h ago</small>
-                            </div>
+                    </div>
+                    <div class="card-footer">
+                        <img src="https://lh3.googleusercontent.com/a-/AOh14GjtR01FIFEXU5kGpo2k7DgcWEN8EW64HbEBguRKDw=s288-p-rw-no"
+                            alt="">
+                        <div class="author">
+                            <p>Aimé Igirimpuhwe</p>
+                            <small>2h ago</small>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png"
-                                alt="">
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png" alt="">
+                    </div>
+                    <div class="card-content">
+                        <span>Growth</span>
+                        <span class="action-icon" onclick="showEditBlogForm()"> <i class="uil-edit-alt"></i> </span>
+                        <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
+                        <h3>Andela Brand's Evolution</h3>
+                        <p>Our new brand symbolizes the spark created when people come together through
+                            @Andela
+                            to make an impact and the limitless opening of the world, keeping us moving toward a
+                            brighter, more brilliant future. #ThisisAndela </p>
+                    </div>
+                    <div class="card-footer">
+                        <img src="https://lh3.googleusercontent.com/a-/AOh14GjtR01FIFEXU5kGpo2k7DgcWEN8EW64HbEBguRKDw=s288-p-rw-no"
+                            alt="">
+                        <div class="author">
+                            <p>Aimé Igirimpuhwe</p>
+                            <small>2h ago</small>
                         </div>
-                        <div class="card-content">
-                            <span>Growth</span>
-                            <span class="action-icon"> <i class="uil-edit-alt"></i> </span>
-                            <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
-                            <h3>Andela Brand's Evolution</h3>
-                            <p>Our new brand symbolizes the spark created when people come together through
-                                @Andela
-                                to make an impact and the limitless opening of the world, keeping us moving toward a
-                                brighter, more brilliant future. #ThisisAndela </p>
-                                </div>
-                            <div class="card-footer">
-                                <img src="https://lh3.googleusercontent.com/a-/AOh14GjtR01FIFEXU5kGpo2k7DgcWEN8EW64HbEBguRKDw=s288-p-rw-no"
-                                    alt="">
-                                <div class="author">
-                                    <p>Aimé Igirimpuhwe</p>
-                                    <small>2h ago</small>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png" alt="">
+                    </div>
+                    <div class="card-content">
+                        <span>Growth</span>
+                        <span class="action-icon" onclick="showEditBlogForm()"> <i class="uil-edit-alt"></i> </span>
+                        <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
+                        <h3>Andela Brand's Evolution</h3>
+                        <p>Our new brand symbolizes the spark created when people come together through
+                            @Andela
+                            to make an impact and the limitless opening of the world, keeping us moving toward a
+                            brighter, more brilliant future. #ThisisAndela </p>
+                    </div>
+                    <div class="card-footer">
+                        <img src="https://lh3.googleusercontent.com/a-/AOh14GjtR01FIFEXU5kGpo2k7DgcWEN8EW64HbEBguRKDw=s288-p-rw-no"
+                            alt="">
+                        <div class="author">
+                            <p>Aimé Igirimpuhwe</p>
+                            <small>2h ago</small>
                         </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png"
-                                    alt="">
-                            </div>
-                            <div class="card-content">
-                                <span>Growth</span>
-                                <span class="action-icon"> <i class="fa fa-dollar"></i> </span>
-                                <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
-                                <h3>Andela Brand's Evolution</h3>
-                                <p>Our new brand symbolizes the spark created when people come together through
-                                    @Andela
-                                    to make an impact and the limitless opening of the world, keeping us moving toward a
-                                    brighter, more brilliant future. #ThisisAndela </p>
-                                    </div>
-                                <div class="card-footer">
-                                    <img src="https://lh3.googleusercontent.com/a-/AOh14GjtR01FIFEXU5kGpo2k7DgcWEN8EW64HbEBguRKDw=s288-p-rw-no"
-                                        alt="">
-                                    <div class="author">
-                                        <p>Aimé Igirimpuhwe</p>
-                                        <small>2h ago</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png"
-                                        alt="">
-                                </div>
-                                <div class="card-content">
-                                    <span>Growth</span>
-                                    <span class="action-icon"> <i class="uil-edit-alt"></i> </span>
-                                    <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
-                                    <h3>Andela Brand's Evolution</h3>
-                                    <p>Our new brand symbolizes the spark created when people come together through
-                                        @Andela
-                                        to make an impact and the limitless opening of the world, keeping us moving
-                                        toward a brighter, more brilliant future. #ThisisAndela </p>
-                                        </div>
-                                    <div class="card-footer">
-                                        <img src="https://lh3.googleusercontent.com/a-/AOh14GjtR01FIFEXU5kGpo2k7DgcWEN8EW64HbEBguRKDw=s288-p-rw-no"
-                                            alt="">
-                                        <div class="author">
-                                            <p>Aimé Igirimpuhwe</p>
-                                            <small>2h ago</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png"
-                                            alt="">
-                                    </div>
-                                    <div class="card-content">
-                                        <span>Growth</span>
-                                        <span class="action-icon"> <i class="uil-edit-alt"></i> </span>
-                                        <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
-                                        <h3>Andela Brand's Evolution</h3>
-                                        <p>Our new brand symbolizes the spark created when people come together through
-                                            @Andela
-                                            to make an impact and the limitless opening of the world, keeping us moving
-                                            toward a brighter, more brilliant future. #ThisisAndela </p>
-                                            </div>
-                                        <div class="card-footer">
-                                            <img src="https://lh3.googleusercontent.com/a-/AOh14GjtR01FIFEXU5kGpo2k7DgcWEN8EW64HbEBguRKDw=s288-p-rw-no"
-                                                alt="">
-                                            <div class="author">
-                                                <p>Aimé Igirimpuhwe</p>
-                                                <small>2h ago</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png"
-                                                alt="">
-                                        </div>
-                                        <div class="card-content">
-                                            <span>Growth</span>
-                                            <span class="action-icon"> <i class="uil-edit-alt"></i> </span>
-                                            <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
-                                            <h3>Andela Brand's Evolution</h3>
-                                            <p>Our new brand symbolizes the spark created when people come together
-                                                through
-                                                @Andela
-                                                to make an impact and the limitless opening of the world, keeping us
-                                                moving toward a brighter, more brilliant future. #ThisisAndela </p>
-                                                </div>
-                                            <div class="card-footer">
-                                                <img src="https://lh3.googleusercontent.com/a-/AOh14GjtR01FIFEXU5kGpo2k7DgcWEN8EW64HbEBguRKDw=s288-p-rw-no"
-                                                    alt="">
-                                                <div class="author">
-                                                    <p>Aimé Igirimpuhwe</p>
-                                                    <small>2h ago</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png" alt="">
+                    </div>
+                    <div class="card-content">
+                        <span>Growth</span>
+                        <span class="action-icon" onclick="showEditBlogForm()"> <i class="uil-edit-alt"></i> </span>
+                        <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
+                        <h3>Andela Brand's Evolution</h3>
+                        <p>Our new brand symbolizes the spark created when people come together through
+                            @Andela
+                            to make an impact and the limitless opening of the world, keeping us moving
+                            toward a brighter, more brilliant future. #ThisisAndela </p>
+                    </div>
+                    <div class="card-footer">
+                        <img src="https://lh3.googleusercontent.com/a-/AOh14GjtR01FIFEXU5kGpo2k7DgcWEN8EW64HbEBguRKDw=s288-p-rw-no"
+                            alt="">
+                        <div class="author">
+                            <p>Aimé Igirimpuhwe</p>
+                            <small>2h ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png" alt="">
+                    </div>
+                    <div class="card-content">
+                        <span>Growth</span>
+                        <span class="action-icon" onclick="showEditBlogForm()"> <i class="uil-edit-alt"></i> </span>
+                        <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
+                        <h3>Andela Brand's Evolution</h3>
+                        <p>Our new brand symbolizes the spark created when people come together through
+                            @Andela
+                            to make an impact and the limitless opening of the world, keeping us moving
+                            toward a brighter, more brilliant future. #ThisisAndela </p>
+                    </div>
+                    <div class="card-footer">
+                        <img src="https://lh3.googleusercontent.com/a-/AOh14GjtR01FIFEXU5kGpo2k7DgcWEN8EW64HbEBguRKDw=s288-p-rw-no"
+                            alt="">
+                        <div class="author">
+                            <p>Aimé Igirimpuhwe</p>
+                            <small>2h ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png" alt="">
+                    </div>
+                    <div class="card-content">
+                        <span>Growth</span>
+                        <span class="action-icon" onclick="showEditBlogForm()"> <i class="uil-edit-alt"></i> </span>
+                        <span class="action-icon two"> <i class="uil uil-trash-alt"></i> </span>
+                        <h3>Andela Brand's Evolution</h3>
+                        <p>Our new brand symbolizes the spark created when people come together
+                            through
+                            @Andela
+                            to make an impact and the limitless opening of the world, keeping us
+                            moving toward a brighter, more brilliant future. #ThisisAndela </p>
+                    </div>
+                    <div class="card-footer">
+                        <img src="https://lh3.googleusercontent.com/a-/AOh14GjtR01FIFEXU5kGpo2k7DgcWEN8EW64HbEBguRKDw=s288-p-rw-no"
+                            alt="">
+                        <div class="author">
+                            <p>Aimé Igirimpuhwe</p>
+                            <small>2h ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                                <!-- Add new blog -->
-                                <div class="new-blog-btn" title="Add new blog" onclick="showCreateBlogForm()">
-                                    <div class="stat-card-icon stat-card-icon--primary">
-                                        <div class="stat-card-icon-circle">
-                                            <i class="fa fa-plus"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+        <!-- Add new blog -->
+        <div class="new-blog-btn" title="Add new blog" onclick="showCreateBlogForm()">
+            <div class="stat-card-icon stat-card-icon--primary">
+                <div class="stat-card-icon-circle">
+                    <i class="fa fa-plus"></i>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                            <script>
-                                let newBlogForm = document.querySelector(".new-blog-form")
-                                function showCreateBlogForm() {
+    <script>
+        let newBlogForm = document.querySelector(".new-blog-form-wrapper")
+        let editBlogForm = document.querySelector(".edit-blog-form-wrapper")
+        function showCreateBlogForm() {
 
-                                    newBlogForm.classList.toggle("visible");
-                                }
-                            </script>
+            newBlogForm.classList.toggle("visible");
+        }
+        function hideCreateBlogForm() {
+            newBlogForm.classList.remove("visible");
+        }
+
+        function showEditBlogForm() {
+
+            editBlogForm.classList.toggle("visible");
+        }
+        function hideEditBlogForm() {
+
+            editBlogForm.classList.remove("visible");
+        }
+
+        function validateForm() {
+            let title = document.querySelector(".title").value;
+            let description = document.querySelector(".discription").innerHTML;
+            let errorEl = document.querySelector(".error");
+
+            if (!title.trim().length) {
+                errorEl.innerHTML = "Title cannot be empty"
+            } else if (!description.trim().length) {
+                errorEl.innerHTML = "Description cannot be empty"
+            } else {
+                window.location = "/admin/dashboard.html";
+            }
+        }
+    </script>
 </body>
 
 </html>
