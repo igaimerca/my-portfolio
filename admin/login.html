@@ -18,37 +18,40 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="forms">
-            <div class="form login">
-                <span class="title">Login</span> <br>
-                <small>You're to login as an admin</small>
+    <div class="login-container">
 
-                <form action="#">
-                    <div class="input-field">
-                        <input required type="email" class="email" placeholder="Enter your email" required>
-                        <i class="uil uil-envelope"></i>
-                    </div>
+        <div class="container">
+            <div class="forms">
+                <div class="form login">
+                    <span class="title">Login</span> <br>
+                    <small>You're to login as an admin</small>
 
-                    <div class="input-field">
-                        <input required type="password" class="password" placeholder="Enter your password" required>
-                        <i class="uil uil-lock icon"></i>
-                        <i class="uil uil-eye-slash showHidePw"></i>
-                    </div>
-
-                    <div class="checkbox-text">
-                        <div class="checkbox-content">
-                            <input required type="checkbox" id="logCheck">
-                            <label for="logCheck" class="text">Remember me</label>
+                    <form action="#">
+                        <div class="input-field">
+                            <input required type="email" class="email" placeholder="Enter your email" required>
+                            <i class="uil uil-envelope"></i>
                         </div>
 
-                        <a href="#" class="text">Forgot password?</a>
-                    </div>
-                    <p class="error"></p>
-                    <div class="input-field button">
-                        <input type="button" type="submit" value="Login Now" onclick="validateForm()">
-                    </div>
-                </form>
+                        <div class="input-field">
+                            <input required type="password" class="password" placeholder="Enter your password" required>
+                            <i class="uil uil-lock icon"></i>
+                            <i class="uil uil-eye-slash showHidePw"></i>
+                        </div>
+
+                        <div class="checkbox-text">
+                            <div class="checkbox-content">
+                                <!-- <input required type="checkbox" id="logCheck"> -->
+                                <label for="logCheck" class="text">Remember me</label>
+                            </div>
+
+                            <a href="#" class="text">Forgot password?</a>
+                        </div>
+                        <p class="error"></p>
+                        <div class="input-field button">
+                            <input type="button" type="submit" value="Login Now" onclick="validateForm()">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

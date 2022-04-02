@@ -108,9 +108,9 @@
                     <i class="uil uil-blogger"></i>
                     <a href="">Blogs</a>
                 </li>
-                <li>
+                <li onClick="logout()">
                     <i class="uil uil-sign-out-alt"></i>
-                    <a href="../index.html">Logout</a>
+                    <span>Logout</span>
                 </li>
             </ul>
         </div>
@@ -169,7 +169,7 @@
                 </div>
             </div>
             <div class="blogs">
-                <div class="card">
+                <div class="card" onclick="openSingleBlog()">
                     <div class="card-header">
                         <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png" alt="">
                     </div>
@@ -192,7 +192,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" onclick="openSingleBlog()">
                     <div class="card-header">
                         <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png" alt="">
                     </div>
@@ -215,7 +215,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" onclick="openSingleBlog()">
                     <div class="card-header">
                         <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png" alt="">
                     </div>
@@ -238,7 +238,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" onclick="openSingleBlog()">
                     <div class="card-header">
                         <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png" alt="">
                     </div>
@@ -261,7 +261,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" onclick="openSingleBlog()">
                     <div class="card-header">
                         <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png" alt="">
                     </div>
@@ -284,7 +284,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" onclick="openSingleBlog()">
                     <div class="card-header">
                         <img src="https://andela.com/wp-content/uploads/2022/03/andela-social-share-default.png" alt="">
                     </div>
@@ -353,6 +353,13 @@
             } else {
                 window.location = "/admin/dashboard.html";
             }
+        }
+        function logout() {
+            localStorage.clear();
+            window.location = "/index.html";
+        }
+        function openSingleBlog() {
+            window.location = "/single_blog.html";
         }
     </script>
 </body>
