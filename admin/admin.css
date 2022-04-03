@@ -224,6 +224,9 @@ body {
   justify-content: center;
 }
 @media screen and (max-width: 448px) {
+    .container {
+        width: 99%;
+    }
   .admin-main {
     flex: 4;
   }
@@ -527,7 +530,7 @@ textarea {
   padding: 25px;
   margin-bottom: 25px;
   border-radius: 5px;
-  margin-right: 1rem;
+  margin-right: 1.9rem;
   overflow: hidden;
   display: flex;
   min-width: 240px;
@@ -551,6 +554,23 @@ textarea {
 .stat-card-icon-circle i {
   font-size: 30px;
   color: #007bff;
+}
+@media screen and (max-width: 807px) {
+    .dashboard-wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+    .admin-sidebar {
+        width: 100%;
+        background: #f7f7f7;
+        padding: 0.7rem;
+    }
+    .admin-ul {
+        display: flex;
+    }
+    .admin-ul li {
+        margin: 0 1rem;
+    }
 }
 .stat-card-icon.stat-card-icon--success .stat-card-icon-circle {
   background: rgba(40, 167, 69, 0.2);

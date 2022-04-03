@@ -173,15 +173,16 @@ a {
   width: 100%;
 }
 .error {
-    margin-top: 1rem;
-    color: crimson;
-    text-align: center;
-    font-weight: bold;
-  }
-  .error.contact, .error.dashboard {
-      text-align: start;
-      margin-bottom: 1.2rem;
-  }
+  margin-top: 1rem;
+  color: crimson;
+  text-align: center;
+  font-weight: bold;
+}
+.error.contact,
+.error.dashboard {
+  text-align: start;
+  margin-bottom: 1.2rem;
+}
 .work.section-sides {
   align-items: baseline;
   width: 74%;
@@ -194,7 +195,7 @@ a {
 }
 .statistics {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
 }
@@ -503,6 +504,9 @@ textarea {
 }
 
 /* BLOG CARD */
+.blogs.homepage {
+    width: 100vw;
+}
 .blogs {
   display: flex;
   flex-wrap: wrap;
@@ -510,6 +514,7 @@ textarea {
 }
 .card {
   margin: 1.4rem;
+  cursor: pointer;
   width: 326px;
   background-color: #fff;
   box-shadow: 0 0 7px #bbbbbb99;
@@ -618,7 +623,6 @@ textarea {
   cursor: pointer;
 }
 
-
 /* RESPONSIVENESS */
 
 @media only screen and (max-width: 1115px) {
@@ -631,6 +635,12 @@ textarea {
   }
 }
 @media screen and (max-width: 854px) {
+    .single-blog-card .inner {
+        flex-direction: column;
+    }
+    .edit-blog-form, .new-blog-form {
+        width: 93vw;
+    }
   .landing-page {
     flex-direction: column-reverse;
     align-items: start;
@@ -678,9 +688,9 @@ textarea {
 }
 
 @media screen and (max-width: 393px) {
-    .my-desc h1 {
-        font-size: 2em;
-      } 
+  .my-desc h1 {
+    font-size: 2em;
+  }
 }
 @media screen and (max-width: 360px) {
   .header {
@@ -706,38 +716,37 @@ textarea {
   }
 }
 
-
 /* SINGLE BLOG */
 .single-blog-card {
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    margin: 3rem 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  margin: 3rem 0;
 }
 .single-blog-card .inner {
-    width: 91%;
-    display: flex;
-    margin: auto;
+  width: 91%;
+  display: flex;
+  margin: auto;
 }
 .single-blog-card .card-header {
-    flex: 1;
+  flex: 1;
 }
 .blog-details {
-    flex: 1;
+  flex: 1;
 }
 .single-blog-card .banner-img {
-    height: 100%;
-    object-fit: fill;
-    border-radius: 5px;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 5px;
 }
 .blog-details h2 {
-    margin: 0.7rem 0;
+  margin: 0.7rem 0;
 }
 .related-blogs {
-    justify-content: center;
-    margin: 2rem 0;
+  justify-content: center;
+  margin: 2rem 0;
 }
 .related-blogs h2 {
-    text-align: center;
-    text-decoration: underline;
+  text-align: center;
+  text-decoration: underline;
 }
