@@ -1,6 +1,6 @@
 // api url
 // const api_url = "https://ai-brand-server.herokuapp.com";
-const api_url = "https://ai-brand-server.herokuapp.com/";
+const api_url = "https://ai-brand-server.herokuapp.com";
 
 // Defining async function
 async function getBlogs(url) {
