@@ -65,13 +65,30 @@
                 errorEl.innerHTML = "Email cannot be empty"
             } else if (!password.trim().length) {
                 errorEl.innerHTML = "Password cannot be empty"
-            } else if (password != "123456") {
-                errorEl.innerHTML = "Invalid credentials, try again!";
-            } else if (email != "igaimerca@gmail.com") {
-                errorEl.innerHTML = "Invalid credentials, try again!"
             } else {
-                localStorage.setItem("user_info", JSON.stringify({ name: "Aime Igirimpuhwe", email: email, role: "admin" }));
-                window.location = "/admin/dashboard.html";
+
+                // https://ai-brand-server.herokuapp.com/auth/login
+                fetch("https://ai-brand-server.herokuapp.com/auth/login", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+                }).then((res) => res.json())
+                    .then((data) => {
+                        errorEl.innerHTML = "";
+                        localStorage.setItem("user_info", JSON.stringify({ user: data.data, token: data.token }));
+                        if (data.data.role == "admin") {
+                            return window.location = "/admin/dashboard.html";
+                        }
+                    })
+                    .catch((error) => {
+                        errorEl.innerHTML = "Invalid credentials, try again!"
+                        console.log(error.error)
+                    })
             }
         }
     </script>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact messages | Admin</title>
+    <link rel="stylesheet" href="./admin.css">
+    <script>
+        let userRole = JSON.parse(localStorage.getItem("user_info"))?.user.role;
+        if (!userRole || userRole != "admin") {
+            window.location = "/";
+        } else {
+            return;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="dashboard-wrapper">
+        <div class="admin-sidebar">
+            <ul class="admin-ul">
+                <li class="active">
+                    <i class="uil uil-envelope-check"></i>
+                    <a href="/admin/query.html">&nbsp;Queries</a>
+                </li>
+                <x></x>
+                <li>
+                    <i class="uil uil-blogger"></i>
+                    <a href="/admin/dashboard.html">&nbsp;Blogs</a>
+                </li>
+                <li onClick="logout()">
+                    <i class="uil uil-sign-out-alt"></i>
+                    <span>&nbsp;Logout</span>
+                </li>
+            </ul>
+        </div>
+        <div class="admin-main">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Subject</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="loader">
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        let token = JSON.parse(localStorage.getItem("user_info"))?.token;
+        let tbodyElem = document.querySelector("tbody");
+        fetch("https://ai-brand-server.herokuapp.com/contact", {
+            method: 'GET',
+            headers: {
+                'authorization': token
+            },
+        }).then((res) => res.json())
+            .then((data) => {
+                data.forEach(query => {
+                    let trElem = document.createElement('tr');
+                    let td1 = document.createElement('td');
+                    let td2 = document.createElement('td');
+                    let td3 = document.createElement('td');
+                    let td4 = document.createElement('td');
+
+                    td1.innerHTML = query.name;
+                    td2.innerHTML = query.subject;
+                    td3.innerHTML = query.email;
+                    td4.innerHTML = query.message;
+                    trElem.append(td1, td2, td3, td4);
+                    tbodyElem.append(trElem);
+                    document.querySelector('#loader').style.display = 'none';
+                });
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    </script>
+</body>
+
+</html>

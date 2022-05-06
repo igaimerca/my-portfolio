@@ -751,6 +751,9 @@ textarea {
   flex-direction: column;
   margin: 2rem 0;
 }
+#blogs-container {
+    flex-wrap: wrap;
+}
 .related-blogs h2 {
   text-align: center;
   text-decoration: underline;

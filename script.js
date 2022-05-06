@@ -16,6 +16,19 @@ async function getBlogs(url) {
   showBlogs(data);
 }
 
+async function sendQuery(url) {
+    // Storing response
+    const response = await fetch(url);
+  
+    // Storing data in form of JSON
+    var data = await response.json();
+    console.log(data);
+    if (response) {
+      hideloader();
+    }
+    showBlogs(data);
+  }
+
 // Calling that async function
 getBlogs(`${api_url}/blogs`);
 
