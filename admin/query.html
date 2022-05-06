@@ -63,7 +63,7 @@
         fetch("https://ai-brand-server.herokuapp.com/contact", {
             method: 'GET',
             headers: {
-                'authorization': token
+                'authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU3MGM4ODBmNzhlMWQyZjUwNDUzNzMiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NDk5NjA2MTl9.JhWPMPZbb1EF9GwU7UX5FHZ-WMTORC6BCHE6nngQGuQ"
             },
         }).then((res) => res.json())
             .then((data) => {
