@@ -129,7 +129,7 @@
         <div class="admin-sidebar">
             <ul class="admin-ul">
                 <li>
-                    <i class="uil uil-envelope-check"></i> 
+                    <i class="uil uil-envelope-check"></i>
                     <a href="/admin/query.html">&nbsp;Queries</a>
                 </li>
                 <x></x>
@@ -790,7 +790,9 @@
     </div>
 
     <script>
-        document.querySelector("#blogs-container").style.display = "none";
+        let container = document.querySelector("#blogs-container");
+        container.style.display = "none";
+
         let newBlogForm = document.querySelector(".new-blog-form-wrapper")
         let editBlogForm = document.querySelector(".edit-blog-form-wrapper")
         function showCreateBlogForm() {
@@ -903,15 +905,35 @@
         }
         // Function to define innerHTML for HTML table
         function showBlogs(data) {
-            // let blogCards = document.getElementsByClassName("blog-card");
-            // // Loop to access all rows
-            // if (blogCards.length >= 6) {
-            //     for (let i = 0; i < 10; i++) {
-            //         blogCards[i].querySelector("img").src = data[i].banner;
-            //         blogCards[i].querySelector("#blog-title").innerHTML = data[i].title;
-            //         blogCards[i].querySelector("#blog-description").innerHTML = data[i].description;
-            //     }
-            // }
+            // data.forEach(query => {
+            //     let card = document.createElement('div');
+            //     card.classList.add("card");
+
+            //     let cardHeader = document.createElement('div');
+            //     cardHeader.classList.add("card-header");
+            //     let img = document.createElement('img');
+            //     cardHeader.append(img);
+
+            //      let cardContent = document.createElement('div');
+            //      cardContent.classList.add("card-content");
+
+            //      let cardFooter = document.createElement('div');
+            //      cardFooter.classList.add("card-footer");
+
+            //     let span1 = document.createElement('span');
+
+            //     let td2 = document.createElement('td');
+            //     let td3 = document.createElement('td');
+            //     let td4 = document.createElement('td');
+
+            //     td1.innerHTML = query.name;
+            //     td2.innerHTML = query.subject;
+            //     td3.innerHTML = query.email;
+            //     td4.innerHTML = query.message;
+            //     trElem.append(td1, td2, td3, td4);
+            //     container.append(trElem);
+            //     document.querySelector('#loader').style.display = 'none';
+            // });
         }
 
     </script>

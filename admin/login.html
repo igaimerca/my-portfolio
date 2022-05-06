@@ -48,7 +48,8 @@
                         </div>
                         <p class="error"></p>
                         <div class="input-field button">
-                            <input type="button" type="submit" value="Login Now" onclick="validateForm()">
+                            <input type="button" id="submit-btn" type="submit" value="Login Now"
+                                onclick="validateForm()">
                         </div>
                     </form>
                 </div>
@@ -58,13 +59,18 @@
     <script>
 
         function validateForm() {
+            document.querySelector("#submit-btn").value = "Logging in..."
             let email = document.querySelector(".email").value;
             let password = document.querySelector(".password").value;
             let errorEl = document.querySelector(".error");
             if (!email.trim().length) {
-                errorEl.innerHTML = "Email cannot be empty"
+                errorEl.innerHTML = "Email cannot be empty";
+                document.querySelector("#submit-btn").value = "Login"
+
             } else if (!password.trim().length) {
-                errorEl.innerHTML = "Password cannot be empty"
+                errorEl.innerHTML = "Password cannot be empty";
+                document.querySelector("#submit-btn").value = "Login"
+
             } else {
 
                 // https://ai-brand-server.herokuapp.com/auth/login
@@ -81,13 +87,15 @@
                     .then((data) => {
                         errorEl.innerHTML = "";
                         localStorage.setItem("user_info", JSON.stringify({ user: data.data, token: data.token }));
+                        document.querySelector("#submit-btn").value = "Login"
                         if (data.data.role == "admin") {
                             return window.location = "/admin/dashboard.html";
                         }
                     })
                     .catch((error) => {
                         errorEl.innerHTML = "Invalid credentials, try again!"
-                        console.log(error.error)
+                        console.log(error.error);
+                        document.querySelector("#submit-btn").value = "Login"
                     })
             }
         }
