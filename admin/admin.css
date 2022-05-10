@@ -60,6 +60,9 @@ body {
 .container.active .forms {
   height: 600px;
 }
+td {
+    font-size: 0.8rem !important;
+}
 
 .container .form .title {
   position: relative;
@@ -224,7 +227,7 @@ body {
   justify-content: center;
 }
 table {
-  width: 750px;
+    width: 92%;
   border-collapse: collapse;
   margin: 50px auto;
 }
